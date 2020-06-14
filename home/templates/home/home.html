@@ -1,0 +1,141 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'home/main.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Home Page</title>
+</head>
+<body>
+    <div id="parallex1">
+        <div class="head">
+            <div class="logo">
+                <img src="{{items.logo.url}}" class="logopic">
+            </div>
+            <div class="navbar" id="navbar">
+                <div class="pages">
+                    <a href="{%url 'homepage'%}" class="home page activepage">Home</a>
+                    <div  class="cars page dropdown"><a class="a" href="#">Cars</a>
+                        <div class="carlist list">
+                            <a href="#" class="car">#</a>
+                            <a href="#" class="car">#</a>
+                            <a href="#" class="car">#</a>
+                        </div>
+                    </div>
+                    <a href="#" class="team page">Team</a>
+                    <a href="#" class="crowdfunding page">Crowdfunding</a>
+                    <a href="#sponsors" class="sponsors page">Sponsors</a>
+                    <div class="courses page dropdown"><a class="a" href="#">Courses</a>
+                        <div class="courselist list">
+                            <a href="#" class="course">#</a>
+                            <a href="#" class="course">#</a>
+                            <a href="#" class="course">#</a>
+                        </div>
+                    </div> 
+                    <a class="contacts page" href="#contacts">Contact</a>
+                    
+                </div>
+                <div class="logs">
+                    {%if request.user.is_authenticated%}
+                        <a href="{%url 'logout'%}" class="login log">Logout</a>
+                        <a href="{%url 'profile'%}"><img class="profilepic" src="{{request.user.profile.image.url}}" alt=""></a>
+                    {%else%}
+                        <a href="{%url 'login'%}" class="login log">Login</a>
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+        <div class="quotecontainer">
+            <h1>SASTRA Racing Team</h1>
+            <h2>Some Quote Hear</h2>
+        </div>
+        <div class="firstcontent">
+            {%for slide in slides%}
+                <div class="slide fade">
+                    <a href="#"><img src="{%static 'home/img/one.jpg'%}" class="rounded-corners" height="270px" width="480px"></a>
+                </div>
+            {%endfor%}
+            <div class="dot-container" style="text-align:center">
+            {%for slide in slides%}
+                <span class="dot" onclick="currentSlide()">{{slide.id}}</span>
+            {%endfor%}  
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+    
+    <div class="video-container">
+        <div class="video"><iframe width="800" height="450" src="https://www.youtube.com/embed/wuR9hd54qwE" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="videodiscription">
+            <h2>Video Description</h2>
+            <br><hr class="bar"><br>
+            <p class="desc">This is a short discription of the video.
+                The video contains who we are, what we do,
+                and a lot more about us.
+                Join us and experience the adventures of the event
+            </p>
+        </div>
+    </div>
+    <div class="belowcontainer">
+        <br><br>
+        <div class="sponcer-container" id="sponsors">
+            <div class="sponcer" id="1"><a href="#"><img src="{%static 'home/img/one.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+            <div class="sponcer" id="2"><a href="#"><img src="{%static 'home/img/two.png'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+            <div class="sponcer" id="3"><a href="#"><img src="{%static 'home/img/three.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+            <div class="sponcer" id="1"><a href="#"><img src="{%static 'home/img/one.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+            <div class="sponcer" id="2"><a href="#"><img src="{%static 'home/img/two.png'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+            <div class="sponcer" id="3"><a href="#"><img src="{%static 'home/img/three.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+            <div class="sponcer" id="1"><a href="#"><img src="{%static 'home/img/one.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+            <div class="sponcer" id="2"><a href="#"><img src="{%static 'home/img/two.png'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+            <div class="sponcer" id="3"><a href="#"><img src="{%static 'home/img/three.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+        </div>
+        <br><br><br><br>
+        <div id="contacts">
+            <form method="POST">
+                {%csrf_token%}
+                <label style="text-align: left;">Write to us <hr class="bar" style="width:100%;"></label>
+                <div>
+                    <input id="name" type="text" name="name" placeholder="Your name.." required>
+                </div>
+                <div>
+                    <input id="email" type="email" name="email" placeholder="Your email id.." required>
+                </div>
+                <div>
+                    <input id="mobile" type="text" name="mobile" placeholder="Mobile number.." >
+                </div>
+                <div>
+                    <input id="subject" type="text" name="subject" placeholder="Subject.." >
+                </div>
+                <br>
+                <div>
+                    <textarea id="msg" name="message" required placeholder="Write a message..." ></textarea>
+                </div>
+                <button id="save_msg">Send</button>
+                <button type="reset">Reset</button>
+            </form>
+            <div>
+                <img src="{%static 'home/img/one.jpg'%}" id="map" height = "500px" width="700px">
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        
+        <div class="general">
+            <p>Address, door no: <br>
+            Road road <br>
+            City</p>
+        </div>
+        <div class="general">
+            <p>Manager: Name</p>
+            <p>Mobile number</p>
+            <p>manager@email.com</p>
+        </div>
+        
+    </div>
+
+    <script src="{%static 'home/script.js'%}"></script>
+</body>
+</html>
