@@ -38,3 +38,10 @@ def carsPage(request):
         'cars':Car.objects.all().first(),
         'items':Item.objects.only('logo').first()}
     return render(request,'home/cars.html',content)
+
+def teamPage(request):
+    content={
+        'members':TeamMember.objects.all(),
+        'items':Item.objects.only('logo').first()
+    }
+    return render(request,'home/team.html',content)

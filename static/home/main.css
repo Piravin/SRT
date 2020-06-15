@@ -333,29 +333,37 @@ img.rounded-corners{
     transform: scale(1.02);
     transition: 0.3s ease;
 }
+.cont-cont{
+    background: url(img/back3.JPG);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 #contacts{
     color: burlywood;
-    background-color: rgb(41, 41, 41);
     min-height: 700px;
     display: flex;
+
+    background-color: rgba(0, 0, 0, 0.623);
+
     align-items: center;
     justify-content: space-around;
     text-align: center;
     font-size: 30px;
     padding: 30px;
-    margin-top: 200px;
     line-height: 2;
     border-top:2px solid saddlebrown;
 }
 .general{
     padding-left: 100px;
     padding-right: 100px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     text-align: left;
     color: whitesmoke;
 }
 #contacts>form{
     width:400px;
+    background-color: rgb(34, 34, 34);
 
 }
 #contacts>form>div>input{
@@ -405,7 +413,6 @@ img.rounded-corners{
 }
 .foot{
     background-color: black;
-    height:100px;
     width:100%;
     display: flex;
     color: blanchedalmond;
@@ -414,4 +421,30 @@ img.rounded-corners{
 #contacts>form{
     padding: 20px;
     box-shadow: 0 0 10px 0 rgb(54, 54, 54);
+}
+.team-container{
+    height:700px;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-image: url('img/team.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.member{
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    max-width: 200px;
+    max-height: 250px;
+    background-color: rgb(240, 202, 121);
+
+    border-radius: 2px;
+}
+.member>hr{
+    border-color: violet;
+}
+.member:hover{
+    transform: scale(1.01);
+    transition: 0.3s;
 }

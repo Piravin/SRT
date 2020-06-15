@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'home/main.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>Home Page</title>
 </head>
@@ -17,14 +18,8 @@
             <div class="navbar" id="navbar">
                 <div class="pages">
                     <a href="{%url 'homepage'%}" class="home page activepage">Home</a>
-                    <div  class="cars page dropdown"><a class="a" href="{%url 'carspage'%}">Cars</a>
-                        <div class="carlist list">
-                            <a href="#" class="car">#</a>
-                            <a href="#" class="car">#</a>
-                            <a href="#" class="car">#</a>
-                        </div>
-                    </div>
-                    <a href="#" class="team page">Team</a>
+                    <a class="cars page a" href="{%url 'carspage'%}">Cars</a>
+                    <a href="{%url 'teampage'%}" class="team page">Team</a>
                     <a href="#" class="crowdfunding page">Crowdfunding</a>
                     <a href="#sponsors" class="sponsors page">Sponsors</a>
                     <div class="courses page dropdown"><a class="a" href="#">Courses</a>
@@ -48,8 +43,8 @@
             </div>
         </div>
         <div class="quotecontainer">
-            <h1>SASTRA Racing Team</h1>
-            <h2>Some Quote Hear</h2>
+            <h1>{{items.quote1}}</h1>
+            <h2>{{items.quote2}}</h2>
         </div>
         <div class="firstcontent">
             <div class="slide fade">
@@ -61,14 +56,9 @@
     </div>
     
     <div class="video-container">
-        <div class="video"><iframe width="800" height="450" src="https://www.youtube.com/embed/wuR9hd54qwE" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="video"><iframe width="800" height="450" src="{{items.video}}" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="videodiscription">
-            <h2>Video Description</h2>
-            <br><hr class="bar"><br>
-            <p class="desc">This is a short discription of the video.
-                The video contains who we are, what we do,
-                and a lot more about us.
-                Join us and experience the adventures of the event
+            <p class="desc">{{items.video_description}}
             </p>
         </div>
     </div>
@@ -80,7 +70,12 @@
             {%endfor%}
         </div>
         <br><br><br><br>
+    </div>
+    <div class="cont-cont">
         <div id="contacts">
+            <div>
+                <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=sastra%20university&key=AIzaSyBs8EioAiI9KwsznUcxgDrtEqUCSCC_MPk" allowfullscreen></iframe>
+            </div>
             <form method="POST">
                 {%csrf_token%}
                 <label style="text-align: left;">Write to us <hr class="bar" style="width:100%;"></label>
@@ -103,26 +98,23 @@
                 <button id="save_msg">Send</button>
                 <button type="reset">Reset</button>
             </form>
-            <div>
-                <img src="{%static 'home/img/one.jpg'%}" id="map" height = "500px" width="700px">
-            </div>
+
+            <div class="fb-page" data-href="https://www.facebook.com/SASTRARacingOfficial/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/SASTRARacingOfficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SASTRARacingOfficial/">SASTRA Racing Team</a></blockquote></div>
         </div>
     </div>
+
+
     <div class="foot">
         
         <div class="general">
-            <p>Address, door no: <br>
-            Road road <br>
-            City</p>
+            <pre style="padding: 10px;">{{items.address}}</pre>
         </div>
         <div class="general">
-            <p>Manager: Name</p>
-            <p>Mobile number</p>
-            <p>manager@email.com</p>
+            <pre style="padding: 10px;">{{items.contacts}}</pre>
         </div>
         
     </div>
-
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0" nonce="2e8qM6JO"></script>
     <script src="{%static 'home/script.js'%}"></script>
 </body>
 </html>

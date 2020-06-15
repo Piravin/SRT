@@ -1,4 +1,5 @@
 from django.db import models
+from PIL import Image
 
 class Item(models.Model):
     logo = models.ImageField(default='logo.png',upload_to='logo',blank=True)
@@ -45,3 +46,13 @@ class Car(models.Model):
     def __str__(self):
         return self.year
     
+class TeamMember(models.Model):
+    name = models.CharField(max_length=100)
+    photo = models.ImageField(default="default.png",upload_to="Team_profile_pics")
+    role = models.CharField(max_length=100,default="member",blank=True)
+    subsystem = models.CharField(max_length=100)
+    linked_in = models.CharField(max_length=1000,default="#")
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
