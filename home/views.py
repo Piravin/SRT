@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from .models import *
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import MessageSerializer
+from .serializers import *
 from .models import Message
 
 def homePage(request):
@@ -32,4 +32,10 @@ def svMsg(request):
     serializer = MessageSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def showSlide(request):
+    slide = Slide.objects.all()
+    serializer = SlideSerializer(slide, many=True)
     return Response(serializer.data)

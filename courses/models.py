@@ -6,14 +6,14 @@ class Course(models.Model):
     author = models.ForeignKey(User,default=1, on_delete=models.SET_DEFAULT)
     overview = models.TextField(blank=True)
 
-    class __str__(self):
+    def __str__(self):
         return self.name
 
 class Topic(models.Model):
     name = models.CharField(max_length=100)
     parent_course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
-    class __str__(self):
+    def __str__(self):
         return self.name
 
 class Comment(models.Model):
@@ -21,5 +21,5 @@ class Comment(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
     comment = models.TextField()
 
-    class __str__(self):
+    def __str__(self):
         return self.author

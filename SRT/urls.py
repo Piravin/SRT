@@ -14,6 +14,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('save_msg',home_view.saveMsg,name="save_msg"),
     path('sv_msg',home_view.svMsg,name="sv_msg"),
+    path('show_slide',home_view.showSlide,name="show_slide"),
     path('profile/', user_view.profile, name='profile'),
     path('password-reset/',auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'),name='password-reset'),
     path('password_reset_done/',auth_views.PasswordChangeView.as_view(template_name='users/password_reset_done.html'),name='password_reset_done'),

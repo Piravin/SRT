@@ -52,11 +52,9 @@
             <h2>Some Quote Hear</h2>
         </div>
         <div class="firstcontent">
-            {%for slide in slides%}
-                <div class="slide fade">
-                    <a href="#"><img src="{%static 'home/img/one.jpg'%}" class="rounded-corners" height="270px" width="480px"></a>
-                </div>
-            {%endfor%}
+            <div class="slide fade">
+                <a href="#" id="slilink"><img id="slide" src="/media/slides/three.jpg" class="rounded-corners" height="270px" width="480px"></a>
+            </div>
             <div class="dot-container" style="text-align:center">
             {%for slide in slides%}
                 <span class="dot" onclick="currentSlide()">{{slide.id}}</span>

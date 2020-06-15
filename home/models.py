@@ -14,7 +14,7 @@ class Item(models.Model):
 
 class Slide(models.Model):
     title = models.CharField(max_length=100)
-    slide_link = models.CharField(max_length=1000, blank=True)
+    slide_link = models.CharField(max_length=1000,default='#', blank=True)
     slide = models.ImageField(upload_to='slides')
 
     def __str__(self):
