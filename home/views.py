@@ -32,3 +32,9 @@ def showSlide(request):
     slide = Slide.objects.all()
     serializer = SlideSerializer(slide, many=True)
     return Response(serializer.data)
+
+def carsPage(request):
+    content={
+        'cars':Car.objects.all().first(),
+        'items':Item.objects.only('logo').first()}
+    return render(request,'home/cars.html',content)

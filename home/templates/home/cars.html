@@ -1,0 +1,63 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'home/main.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>SRT-Cars</title>
+</head>
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="{{items.logo.url}}" class="logopic">
+        </div>
+        <div class="navbar" id="navbar">
+            <div class="pages">
+                <a href="{%url 'homepage'%}" class="home page">Home</a>
+                <a class="cars page activepage" href="{%url 'carspage'%}">Cars</a>
+                <a href="#" class="team page">Team</a>
+                <a href="#" class="crowdfunding page">Crowdfunding</a>
+                <a href="#sponsors" class="sponsors page">Sponsors</a>
+                <div class="courses page dropdown"><a class="a" href="#">Courses</a>
+                    <div class="courselist list">
+                        <a href="#" class="course">#</a>
+                        <a href="#" class="course">#</a>
+                        <a href="#" class="course">#</a>
+                    </div>
+                </div> 
+                <a class="contacts page" href="#contacts">Contact</a>
+                
+            </div>
+            <div class="logs">
+                {%if request.user.is_authenticated%}
+                    <a href="{%url 'logout'%}" class="login log">Logout</a>
+                    <a href="{%url 'profile'%}"><img class="profilepic" src="{{request.user.profile.image.url}}" alt=""></a>
+                {%else%}
+                    <a href="{%url 'login'%}" class="login log">Login</a>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+    <div style="display:flex; justify-content: space-around; padding-top: 10px;">
+        {{cars.link|safe}}
+    </div>
+    <div class="foot">
+        
+        <div class="general">
+            <p>Address, door no: <br>
+            Road road <br>
+            City</p>
+        </div>
+        <div class="general">
+            <p>Manager: Name</p>
+            <p>Mobile number</p>
+            <p>manager@email.com</p>
+        </div>
+        
+    </div>
+
+    <script src="{%static 'home/script.js'%}"></script>
+</body>
+</html>

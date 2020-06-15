@@ -37,4 +37,11 @@ class Message(models.Model):
 
     def __str__(self):
         return self.name
+
+class Car(models.Model):
+    year = models.CharField(max_length=5)
+    link = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.year
     
