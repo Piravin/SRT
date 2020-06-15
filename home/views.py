@@ -16,13 +16,6 @@ def homePage(request):
 
 @api_view(['GET'])
 def saveMsg(request):
-    # name = request.GET['name']
-    # email = request.GET['email']
-    # mobile = request.GET['mobile']
-    # subject = request.GET['subject']
-    # msg = request.GET['msg']
-    # messa = Message(name=name,email=email,mobile=mobile,subject=subject,message=msg)
-    # messa.save()
     msg = Message.objects.all()
     serializer = MessageSerializer(msg, many=True)
     return Response(serializer.data)

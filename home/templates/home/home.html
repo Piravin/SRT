@@ -53,12 +53,7 @@
         </div>
         <div class="firstcontent">
             <div class="slide fade">
-                <a href="#" id="slilink"><img id="slide" src="/media/slides/three.jpg" class="rounded-corners" height="270px" width="480px"></a>
-            </div>
-            <div class="dot-container" style="text-align:center">
-            {%for slide in slides%}
-                <span class="dot" onclick="currentSlide()">{{slide.id}}</span>
-            {%endfor%}  
+                <a href="#" id="slilink"><img id="slide" src="" class="rounded-corners" height="270px" width="480px"></a>
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -80,15 +75,9 @@
     <div class="belowcontainer">
         <br><br>
         <div class="sponcer-container" id="sponsors">
-            <div class="sponcer" id="1"><a href="#"><img src="{%static 'home/img/one.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
-            <div class="sponcer" id="2"><a href="#"><img src="{%static 'home/img/two.png'%}" class="rounded-corners" height="200px" width="480px"></a></div>
-            <div class="sponcer" id="3"><a href="#"><img src="{%static 'home/img/three.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
-            <div class="sponcer" id="1"><a href="#"><img src="{%static 'home/img/one.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
-            <div class="sponcer" id="2"><a href="#"><img src="{%static 'home/img/two.png'%}" class="rounded-corners" height="200px" width="480px"></a></div>
-            <div class="sponcer" id="3"><a href="#"><img src="{%static 'home/img/three.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
-            <div class="sponcer" id="1"><a href="#"><img src="{%static 'home/img/one.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
-            <div class="sponcer" id="2"><a href="#"><img src="{%static 'home/img/two.png'%}" class="rounded-corners" height="200px" width="480px"></a></div>
-            <div class="sponcer" id="3"><a href="#"><img src="{%static 'home/img/three.jpg'%}" class="rounded-corners" height="200px" width="480px"></a></div>
+            {%for spon in sponsors%}
+                <div class="sponcer"><a href="#"><img src="{{spon.sponsor.url}}" class="rounded-corners" height="200px" width="480px"></a></div>
+            {%endfor%}
         </div>
         <br><br><br><br>
         <div id="contacts">
