@@ -20,11 +20,12 @@ html{
     display: flex;
     justify-content: space-between;
     background-image: url('img/carbon-fibre.png');
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     vertical-align: baseline;
     font-size: medium;
     z-index: 100;
+    
 }
 .navbar{
     position: absolute;
@@ -42,18 +43,58 @@ html{
     left:0;
     transition: .3s;
 }
+@media only screen and (max-width:700px){
+    .navbar{
+        position:fixed;
+        bottom:0;
+        right:0;
+        left:0;
+        margin-left: 0;
+        
+    }
+
+    .stickynav{
+        bottom:0;
+        top:90%;
+    }
+    body{
+        padding-bottom: 55px;
+    }
+    .map{
+        width:100%;
+    }
+    .map-cont{
+        width:100%;
+    }
+
+}
 .logo{
     margin-left: 10%;
     background-color: rgb(29, 29, 29);
-    width: 10%;
+    width: 200px;
     height:100px;
     transform: skewX(-20deg);
 }
+
 .logopic{
     width:100%;
     height: 100%;
     padding: 20px;
-    border-radius: 10px;
+}
+@media only screen and (max-width:700px){
+    .logo{
+        margin-left:auto;
+        margin-right: auto;
+        align-self: center;
+        transform: none;
+        background-color: rgba(0, 0, 0, 0);
+        width:100px;
+        height: 80px;
+    }
+    .logopic{
+        padding:20px;
+    }
+    
 }
 .profilepic{
     width:50px;
@@ -63,6 +104,7 @@ html{
 .pages{
     display: flex;
     justify-content: space-between;
+    
 }
 .logs{
     display: flex;
@@ -232,41 +274,36 @@ img.rounded-corners{
     margin-bottom: 10px;
     margin-right: 50px;
     border-radius: 20px;
-    display: inline-block;
-    flex:3;
+    display: block;
+
 }
 .video iframe{
     border-radius: 20px;
     margin-top: 10px;
 }
 .videodescription{
-    flex:1;
+
     text-align: center;
-    padding:100px;
+
     margin-top: 0px;
-    overflow: hidden;
+
     
 }
 .videodiscription h2{
     text-align: center;
     color: burlywood;
-    padding-top: 0px;
+    padding: 20px;
     font-family: Lucida Console;
     font-size: 30px;
-    margin-right: 20px;
 }
 .desc{
     color: burlywood;
     text-align:left;
     font-size: 25px;
     font-family: Comic Sans MS;
-    margin-right: 20px;
+
 }
-.bar{
-    border: 2px solid burlywood;
-    border-radius: 5px;
-    margin-right: 30px;
-}
+
 .belowcontainer{
     background-image: url(img/back2.jpg);
     width: 100%;
@@ -288,6 +325,29 @@ img.rounded-corners{
     right: 0;
     bottom:0;
     border-left:1px solid sandybrown;
+}
+@media (max-width:700px){
+    .firstcontent{
+        width:100%;
+        height: auto;
+        margin-top: 20px;
+    }
+    .slide{
+        margin-left: 0;
+        padding:0;
+    }
+    .slide img{
+        border-radius: 0;
+    }
+    .quotecontainer{
+        width: 100%;
+        clip-path: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .video iframe{
+        width:100%;
+        height: auto;
+    }
 }
 .sponcer-container{
     display: flex;
@@ -360,9 +420,6 @@ img.rounded-corners{
 ::placeholder{
     padding: 10px;
 }
-#map{
-    border-radius: 20px;
-}
 #contacts>form>button{
     height:40px;
     width:100px;
@@ -411,6 +468,7 @@ img.rounded-corners{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    flex-wrap: wrap;
 }
 .member{
     padding: 20px;
@@ -427,4 +485,55 @@ img.rounded-corners{
 .member:hover{
     transform: scale(1.01);
     transition: 0.3s;
+}
+@media only screen and (max-width:1100px){
+    #contacts{
+        flex-wrap: wrap;
+    }
+    .video iframe{
+        width:700px;
+
+    }
+    .sponsors, .crowdfunding,.contacts{
+        display: none;
+    }
+    .video-container{
+        flex-wrap: wrap;
+    }
+
+}
+@media (max-width:700px){
+    .video iframe{
+        width: 100%;
+        margin: auto;
+        height:270px;
+        border-radius: 0;
+    }
+    .video{
+        width: 100%;
+        margin: auto;
+    }
+    .sponcer{
+        padding:0;
+        border-radius: 0;
+    }
+    .desc{
+        padding:10px;
+    }
+    .head{
+        background-color: rgba(0, 0, 0, 0);
+    }
+    img.rounded-corners{
+        border-radius: 0;
+    }
+    .page{
+        padding: 15px;
+    }
+    .navbar{
+        border-radius: 0;
+    }
+    .slide img{
+        width:100%;
+        height:auto;
+    }
 }

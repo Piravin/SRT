@@ -27,7 +27,7 @@ link_list=[];
 dest_list=[];
 calling();
 function calling(){
-    fetch('http://localhost:8000/show_slide')
+    fetch('show_slide')
     .then((resp)=>resp.json())
     .then(function(data){
         slide_list=data;
@@ -63,26 +63,6 @@ window.addEventListener("scroll",function(){
     var offset = window.pageYOffset;
     parallax.style.backgroundPositionY = offset*0.6 + "px";
 })
-// var sponcer = document.getElementById("1");
-//         var sponcers = document.getElementsByClassName("sponcer");
-//         var sponcer_no = sponcers.length;
-//         var scrolable = sponcer.offsetWidth * (sponcer_no-1) + 0.5*sponcer.offsetWidth;
-//         var p = 0.1;
-//         var v=p;
-//         var timer = setInterval(()=>{
-//             if (p<scrolable){
-//                 sponcer.style.marginLeft = "-"+p+"px";
-//                 p+=1;
-//                 v=p;
-//             }
-//             else{
-//                 sponcer.style.marginLeft = "-"+v+"px";
-//                 v-=1;
-//                 if(v<=0){
-//                     p=0;
-//                 }
-//             }
-//         },10);
 
 
 
