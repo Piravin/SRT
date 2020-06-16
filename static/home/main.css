@@ -55,7 +55,8 @@ html{
 
     .stickynav{
         bottom:0;
-        top:90%;
+        top:auto;
+        height:55px;
     }
     body{
         padding-bottom: 55px;
