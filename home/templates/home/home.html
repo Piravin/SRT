@@ -22,7 +22,7 @@
                     <a href="{%url 'teampage'%}" class="team page">Team</a>
                     <a href="#" class="crowdfunding page">Crowdfunding</a>
                     <a href="#sponsors" class="sponsors page">Sponsors</a>
-                    <div class="courses page dropdown"><a class="a" href="#">Courses</a>
+                    <div class="courses page dropdown"><a class="a" href="{%url 'just'%}">Courses</a>
                         <div class="courselist list">
                             <a href="#" class="course">#</a>
                             <a href="#" class="course">#</a>
@@ -74,7 +74,7 @@
     <div class="cont-cont">
         <div id="contacts">
             <div>
-                <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=sastra%20university&key=AIzaSyBs8EioAiI9KwsznUcxgDrtEqUCSCC_MPk" allowfullscreen></iframe>
+                <iframe style="border-radius: 5px;" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=sastra%20university&key=AIzaSyBs8EioAiI9KwsznUcxgDrtEqUCSCC_MPk" allowfullscreen></iframe>
             </div>
             <form method="POST">
                 {%csrf_token%}

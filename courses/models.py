@@ -5,6 +5,7 @@ class Course(models.Model):
     name = models.CharField(max_length=100)
     author = models.ForeignKey(User,default=1, on_delete=models.SET_DEFAULT)
     overview = models.TextField(blank=True)
+    link = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.name

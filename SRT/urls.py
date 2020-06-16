@@ -5,6 +5,7 @@ from users import views as user_view
 from home import views as home_view
 from django.conf import settings
 from django.conf.urls.static import static
+from courses import views as courses_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,6 +14,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('', include('home.urls')),
     path('save_msg',home_view.saveMsg,name="save_msg"),
+    path('courses',courses_views.just,name="just"),
     path('sv_msg',home_view.svMsg,name="sv_msg"),
     path('show_slide',home_view.showSlide,name="show_slide"),
     path('profile/', user_view.profile, name='profile'),

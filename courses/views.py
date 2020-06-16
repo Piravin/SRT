@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import *
 
-# Create your views here.
+def just(request):
+    content={'tab':Course.objects.all().first()}
+    return render(request,'courses/just.html',content)
+
