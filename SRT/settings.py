@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = 'vpqgekwtah-9_a^d#gsmp_o0503ms1k9*qsfhh7xdc9g+(@**g'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE')=='True')
+DEBUG = 'True
 
 ALLOWED_HOSTS = ['https://srtbaja.herokuapp.com']
 
