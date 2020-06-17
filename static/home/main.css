@@ -354,6 +354,7 @@ img.rounded-corners{
     background-color: rgba(0, 0, 0, 0.616);
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 .sponcer{
     padding: 10px;
