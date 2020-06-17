@@ -47,6 +47,14 @@
             <h1>{{items.quote1}}</h1>
             <h2>{{items.quote2}}</h2>
         </div>
+        
+    </div>
+    
+    <div class="video-container">
+        <div class="videodiscription">
+            <p class="desc">{{items.video_description}}
+            </p>
+        </div>
         <div class="firstcontent">
             <div class="slide fade">
                 <a href="#" id="slilink"><img id="slide" src="" class="rounded-corners" height="270px" width="480px"></a>
@@ -54,14 +62,8 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-    </div>
-    
-    <div class="video-container">
-        <div class="video"><iframe width="800" height="450" src="{{items.video}}" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="videodiscription">
-            <p class="desc">{{items.video_description}}
-            </p>
-        </div>
+        <!-- <div class="video"><iframe width="800" height="450" src="{{items.video}}" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
+
     </div>
     <div class="belowcontainer" style="background-image: url('{{items.backgroundimage2.url}}');">
         <br><br>

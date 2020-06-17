@@ -3,8 +3,8 @@ from PIL import Image
 
 class Item(models.Model):
     logo = models.ImageField(default='logo.png',upload_to='logo',blank=True)
-    quote1 = models.CharField(default="SASTRA Racing Team", max_length=20) 
-    quote2 = models.CharField(default="SASTRA Racing Team", max_length=20,blank=True)
+    quote1 = models.CharField(default="SASTRA Racing Team - Baja", max_length=50) 
+    quote2 = models.CharField(default="Quotes comming soon..", max_length=100,blank=True)
     backgroundimage1 = models.ImageField(default='back1.jpg',upload_to='back1',blank=True)
     backgroundimage2 = models.ImageField(default='back2.jpg',upload_to='back2',blank=True)
     video = models.CharField(max_length=1000,blank=True)
