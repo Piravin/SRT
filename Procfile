@@ -1,1 +1,1 @@
-web: gunicorn srt.wsgi
+web: gunicorn SRT.wsgi
