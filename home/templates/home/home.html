@@ -10,7 +10,8 @@
     <title>Home Page</title>
 </head>
 <body>
-    <div id="parallex1">
+    
+    <div id="parallex1" style="background-image: url('{{items.backgroundimage1.url}}');">
         <div class="head">
             <div class="logo">
                 <img src="{{items.logo.url}}" class="logopic">
@@ -62,7 +63,7 @@
             </p>
         </div>
     </div>
-    <div class="belowcontainer">
+    <div class="belowcontainer" style="background-image: url('{{items.backgroundimage2.url}}');">
         <br><br>
         <div class="sponcer-container" id="sponsors">
             {%for spon in sponsors%}

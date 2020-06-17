@@ -185,7 +185,6 @@ html{
     padding: 20px;
 }
 #parallex1{
-    background-image: url("img/back1.jpg");
     width:100%;
     min-height:800px;
     background-repeat: no-repeat;
@@ -306,7 +305,6 @@ img.rounded-corners{
 }
 
 .belowcontainer{
-    background-image: url(img/back2.jpg);
     width: 100%;
     min-height:700px;
     background-attachment: fixed;
