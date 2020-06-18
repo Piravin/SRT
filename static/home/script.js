@@ -1,5 +1,33 @@
+
 var navbar = document.getElementById("navbar");
 var navpos = navbar.offsetTop;
+var savebtn = document.getElementById("svform");
+savebtn.addEventListener("submit",saveMsg);
+function saveMsg(e){
+    e.preventDefault();
+    var req = new XMLHttpRequest();
+    var url = 'sv_msg';
+    req.open("POST",url,true);
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var mobile = document.getElementById("mobile").value;
+    var subject = document.getElementById("subject").value;
+    var msg = document.getElementById("msg").value;
+    var csrfmiddlewaretoken=$('[name=csrfmiddlewaretoken]').val()
+    req.setRequestHeader("Content-type", "application/json");
+    req.setRequestHeader("X-CSRFTOKEN",csrfmiddlewaretoken)
+    
+    req.onreadystatechange = function(){
+        if(this.readyState==4 && this.status==200){
+            alert(req.responseText);
+        }
+    };
+    
+    var data = JSON.stringify({"name":name,"email":email,"mobile":mobile,"subject":subject,"message":msg});
+    
+    console.log(data);
+    req.send(data);
+}
 window.onscroll = ()=>{
     if(window.pageYOffset > navpos){
         navbar.classList.add("stickynav");
@@ -15,8 +43,7 @@ for(let i=0; i<pages.length; i++){
 }
 
 function initAll(){
-    var savebtn = document.getElementById("save_msg");
-    savebtn.onclick = saveMsg;
+    
     var slide = document.getElementById("slide");
     var slilink = document.getElementById("slilink");
 }
@@ -66,21 +93,3 @@ window.addEventListener("scroll",function(){
 
 
 
-function saveMsg(){
-    var req = new XMLHttpRequest();
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var mobile = document.getElementById("mobile").value;
-    var subject = document.getElementById("subject").value;
-    var msg = document.getElementById("msg").value;
-    req.setRequestHeader("Content-type", "application/json");
-    var url = 'sv_msg';
-    req.onreadystatechange = function(){
-        if(this.readyState==4 && this.status==200){
-            alert(req.responseText);
-        }
-    };
-    var data = JSON.stringify({'name':'name','email':'email','mobile':'mobile','subject':'subject','message':'msg'});
-    req.open("POST",url,true);
-    req.send(data);
-}

@@ -1,4 +1,5 @@
 {%load static%}
+{%load rest_framework%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +80,7 @@
             <div class="map-cont">
                 <iframe class="map" style="border-radius: 5px;" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=sastra%20university&key=AIzaSyBs8EioAiI9KwsznUcxgDrtEqUCSCC_MPk" allowfullscreen></iframe>
             </div>
-            <form method="POST">
+            <form id="svform" action="." enctype="multipart/form-data">
                 {%csrf_token%}
                 <label style="text-align: left;">Write to us <hr class="bar" style="width:100%;"></label>
                 <div>
@@ -98,7 +99,7 @@
                 <div>
                     <textarea id="msg" name="message" required placeholder="Write a message..." ></textarea>
                 </div>
-                <button id="save_msg">Send</button>
+                <button type="submit" id="savemsg">Send</button>
                 <button type="reset">Reset</button>
             </form>
 
@@ -117,6 +118,7 @@
         </div>
         
     </div>
+    <script src="{% static 'home/jquery.js'%}"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0" nonce="2e8qM6JO"></script>
     <script src="{%static 'home/script.js'%}"></script>
 </body>
