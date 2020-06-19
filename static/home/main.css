@@ -499,7 +499,7 @@ img.rounded-corners{
         top:auto;
         height:55px;
     } */
-    body{
+    html,body{
         overflow-x: hidden;
     }
     #navbar{
@@ -549,9 +549,6 @@ img.rounded-corners{
     }
     .logs{
         flex-direction: column;
-    }
-    body{
-        padding-bottom: 55px;
     }
     .map{
         width:100%;
