@@ -1,4 +1,8 @@
 
+
+
+
+
 var navbar = document.getElementById("navbar");
 var navpos = navbar.offsetTop;
 var savebtn = document.getElementById("svform");
@@ -28,6 +32,30 @@ function saveMsg(e){
     console.log(data);
     req.send(data);
 }
+var ham = document.getElementById("ham");
+var ham1 = document.getElementById("ham1");
+var ham2 = document.getElementById("ham2");
+var ham3 = document.getElementById("ham3");
+var clicked=1;
+ham.addEventListener("click",()=>{
+    if(clicked){
+        navbar.style.right="0";
+        ham1.style.transform="rotate(45deg) translate(7px,7px)";
+
+        ham3.style.transform="rotate(-45deg) translate(7px,-7px)";
+
+        ham2.style.display="none";
+        clicked=0;
+    }
+    else{
+        navbar.style.right="-100%";
+        ham1.style.transform="rotate(0)";
+        ham3.style.transform="rotate(0)";
+        ham2.style.display="block";
+        clicked=1;
+    }
+    
+});
 window.onscroll = ()=>{
     if(window.pageYOffset > navpos){
         navbar.classList.add("stickynav");

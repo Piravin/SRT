@@ -43,32 +43,7 @@ html{
     left:0;
     transition: .3s;
 }
-@media only screen and (max-width:700px){
-    .navbar{
-        position:fixed;
-        bottom:0;
-        right:0;
-        left:0;
-        margin-left: 0;
-        
-    }
 
-    .stickynav{
-        bottom:0;
-        top:auto;
-        height:55px;
-    }
-    body{
-        padding-bottom: 55px;
-    }
-    .map{
-        width:100%;
-    }
-    .map-cont{
-        width:100%;
-    }
-
-}
 .logo{
     margin-left: 10%;
     background-color: rgb(29, 29, 29);
@@ -81,21 +56,6 @@ html{
     width:100%;
     height: 100%;
     padding: 20px;
-}
-@media only screen and (max-width:700px){
-    .logo{
-        margin-left:auto;
-        margin-right: auto;
-        align-self: center;
-        transform: none;
-        background-color: rgba(0, 0, 0, 0);
-        width:100px;
-        height: 80px;
-    }
-    .logopic{
-        padding:20px;
-    }
-    
 }
 .profilepic{
     width:50px;
@@ -186,7 +146,7 @@ html{
 }
 #parallex1{
     width:100%;
-    min-height:800px;
+    height:800px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -302,13 +262,10 @@ img.rounded-corners{
 .desc{
     padding:20px;
     align-self: center;
-
-}
-.desc{
     color: burlywood;
     text-align:left;
     font-size: 25px;
-    font-family: Comic Sans MS;
+    font-family: 'Raleway', sans-serif;
 
 }
 
@@ -334,29 +291,7 @@ img.rounded-corners{
     bottom:0;
     /* border-right:1px solid sandybrown; */
 }
-@media (max-width:700px){
-    .firstcontent{
-        width:100%;
-        height: auto;
-        margin-top: 20px;
-    }
-    .slide{
-        margin-left: 0;
-        padding:0;
-    }
-    .slide img{
-        border-radius: 0;
-    }
-    .quotecontainer{
-        width: 100%;
-        clip-path: none;
-        background-color: rgba(0, 0, 0, 0);
-    }
-    .video iframe{
-        width:100%;
-        height: auto;
-    }
-}
+
 .sponcer-container{
     display: flex;
     width: 100%;
@@ -386,7 +321,7 @@ img.rounded-corners{
     min-height: 700px;
     display: flex;
 
-    background-color: rgba(0, 0, 0, 0.623);
+    background-color: rgba(0, 0, 0, 0.822);
 
     align-items: center;
     justify-content: space-around;
@@ -396,41 +331,49 @@ img.rounded-corners{
     line-height: 2;
     border-top:2px solid saddlebrown;
 }
+
 .general{
     /* padding-left: 100px;
     padding-right: 100px; */
     /* padding-top: 20px; */
     text-align: left;
-    color: whitesmoke;
+    color: burlywood;
 }
 #contacts>form{
     width:400px;
     background-color: rgb(34, 34, 34);
+    color: burlywood;
+    padding:20px;
 
 }
 #contacts>form>div>input{
     width:100%;
-    height:30px;
-    border-radius: 20px;
     outline:none;
+    border: none;
+    background-color: rgb(34, 34, 34);
+    color: burlywood;
+    
+}
+#contacts>form>div{
+    border-bottom: 1px solid burlywood;
 }
 #contacts>form>div>textarea{
-    resize: vertical;
+    resize: none;
     width:100%;
     min-height: 100px;
-    border-radius: 20px;
     outline:none;
+    border:none;
+    background:none;
+    color: burlywood;
 }
-#contacts>form>div>input,textarea{
-    border: 0px solid rgb(2, 27, 248);
-}
-#contacts>form>div>input,textarea:focus{
+
+/* #contacts>form>div>input,textarea:focus{
     border: 0px solid rgb(2, 27, 248);
     box-shadow: 0 0 0px rgb(255, 173, 66);
-}
-::placeholder{
+} */
+/* ::placeholder{
     padding: 10px;
-}
+} */
 #contacts>form>button{
     height:40px;
     width:100px;
@@ -439,6 +382,10 @@ img.rounded-corners{
     background-color: cornsilk;
     padding:10px;
     outline:none;
+}
+#contacts>form>button:hover{
+    background-color: burlywood;
+    cursor: pointer;
 }
 #contacts>form>button:focus{
     border:0px;
@@ -456,20 +403,22 @@ img.rounded-corners{
 .foot{
     background-color: black;
     width:100%;
-    display:grid;
+    display:flex;
     padding-left: 30px;
-    grid-template-columns: 1fr 1fr 2fr;
+    justify-content: space-around;
     grid-gap:1em;
     color: blanchedalmond;
     border-top: 1px solid rgb(78, 78, 78);
 }
-#contacts>form{
-    padding: 20px;
+.topbar{
+    position: relative;
+    border-bottom: none;
 }
-#contacts>form:hover{
+
+/* #contacts>form:hover{
     box-shadow: 0 0 10px 0 rgb(116, 116, 116);
 
-}
+} */
 .team-container{
     height:700px;
     display: flex;
@@ -505,15 +454,146 @@ img.rounded-corners{
         width:700px;
 
     }
-    .sponsors, .crowdfunding,.contacts{
+    /* .sponsors, .crowdfunding,.contacts{
         display: none;
-    }
+    } */
     .video-container{
         flex-wrap: wrap;
     }
 
 }
+.socicons{
+    display:flex;
+}
+.mail{
+    display: flex;
+    align-self: center;
+}
+.insta{
+    align-self: flex-start;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.fb{
+    align-self: flex-start;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.phone{
+    display: none;
+}
 @media (max-width:700px){
+    /* .navbar{
+        position:fixed;
+        bottom:0;
+        right:0;
+        left:0;
+        margin-left: 0;
+        
+    }
+
+    .stickynav{
+        bottom:0;
+        top:auto;
+        height:55px;
+    } */
+    body{
+        overflow-x: hidden;
+    }
+    #navbar{
+        position:absolute;
+        flex-direction: column;
+        width:auto;
+        top:70px;
+        left:auto;
+        right:-100%;
+        height:auto;
+        bottom:auto;
+        margin-left: 0;
+        justify-content: space-between;
+        align-items: flex-end;
+        transition: 0.3s ease;
+    }
+    .logs{
+        margin-right: 0;
+    }
+    .log{
+        margin-left: 0;
+        width:200px;
+    }
+    .log:hover{
+        border-radius: 0;
+    }
+    /* .stickynav{
+        position:fixed;
+        flex-direction: column;
+    } */
+    .pages{
+        flex-direction: column;
+        padding-bottom: 220px;
+    }
+    .page{
+        width: 200px;
+    }
+    .home{
+        margin-left: 0;
+    }
+    .activepage{
+        border-radius: 0;
+        margin-top: 0;
+    }
+    .page:hover{
+        border-radius: 0;
+    }
+    .logs{
+        flex-direction: column;
+    }
+    body{
+        padding-bottom: 55px;
+    }
+    .map{
+        width:100%;
+    }
+    .map-cont{
+        width:100%;
+    }
+    .logo{
+        margin-left:auto;
+        margin-right: auto;
+        align-self: center;
+        transform: none;
+        background-color: rgba(0, 0, 0, 0);
+        width:100px;
+        height: 80px;
+    }
+    .logopic{
+        padding:20px;
+    }
+    .firstcontent{
+        width:100%;
+        height: auto;
+        margin-top: 20px;
+    }
+    .slide{
+        padding:0;
+        margin-right:0;
+        margin-left: 0;
+        width: 100%;
+    }
+    .slide img{
+        border-radius: 0;
+    }
+    .quotecontainer{
+        width: 100%;
+        clip-path: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .video iframe{
+        width:100%;
+        height: auto;
+    }
     .video iframe{
         width: 100%;
         margin: auto;
@@ -545,9 +625,66 @@ img.rounded-corners{
     }
     .slide img{
         width:100%;
-        height:auto;
+        height:270px;
     }
     .sponcer-container{
         position:relative;
+    }
+    .foot{
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+    #mail{
+        display: none;
+    }
+    .socicons{
+        order: 1;
+    }
+    .general{
+        order: 2;
+    }
+    .phone{
+        display: block;
+        align-self: flex-start;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+    .general{
+        display: none;
+    }
+    .ham{
+        background-color: rgba(0, 0, 0, 0.514);
+        display: block;
+        position: relative;
+        width:45px;
+        height: 35px;
+        float: right;
+        top:-50px;
+        right: 30px;
+        border-radius: 5px;
+    }
+    .ham1, .ham2, .ham3{
+        content:"";
+        position: absolute;
+        display:block;
+        margin-top: 5px;
+        margin-left: 10px;
+        width:35px;
+        height: 2.5px;
+        background-color: sandybrown;
+    }
+    .ham1{
+        top:0px;
+        left:-5px;
+    }
+    .ham2{
+        top:10px;
+        left: -5px;
+    }
+    .ham3{
+        top:20px;
+        left: -5px;
     }
 }

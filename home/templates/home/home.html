@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'home/main.css'%}">
+    <link rel="shortcut icon" type="image/png" href="{{items.logo.url}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>Home Page</title>
@@ -17,6 +18,11 @@
             <div class="logo">
                 <img src="{{items.logo.url}}" class="logopic">
             </div>
+            <dvi class="ham" id="ham">
+                <div class="ham1" id="ham1"></div>
+                <div class="ham2" id="ham2"></div>
+                <div class="ham3" id="ham3"></div>
+            </dvi>
             <div class="navbar" id="navbar">
                 <div class="pages">
                     <a href="{%url 'homepage'%}" class="home page activepage">Home</a>
@@ -24,13 +30,7 @@
                     <a href="{%url 'teampage'%}" class="team page">Team</a>
                     <a href="#" class="crowdfunding page">Crowdfunding</a>
                     <a href="#sponsors" class="sponsors page">Sponsors</a>
-                    <div class="courses page dropdown"><a class="a" href="{%url 'just'%}">Courses</a>
-                        <div class="courselist list">
-                            <a href="#" class="course">#</a>
-                            <a href="#" class="course">#</a>
-                            <a href="#" class="course">#</a>
-                        </div>
-                    </div> 
+                    <a class="courses page" href="{%url 'just'%}">Courses</a>
                     <a class="contacts page" href="#contacts">Contact</a>
                     
                 </div>
@@ -77,12 +77,12 @@
     </div>
     <div class="cont-cont">
         <div id="contacts">
-            <div class="map-cont">
-                <iframe class="map" style="border-radius: 5px;" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=sastra%20university&key=AIzaSyBs8EioAiI9KwsznUcxgDrtEqUCSCC_MPk" allowfullscreen></iframe>
+            <div class="map-cont" style="padding:20px;">
+                <iframe class="map" style="border-radius: 5px;" width="400" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=sastra%20university&key=AIzaSyBs8EioAiI9KwsznUcxgDrtEqUCSCC_MPk" allowfullscreen></iframe>
             </div>
             <form id="svform" action="." enctype="multipart/form-data">
                 {%csrf_token%}
-                <label style="text-align: left;">Write to us <hr class="bar" style="width:100%;"></label>
+                <label style="text-align: left; font-family: 'Times New Roman', Times, serif;">Write to us </label>
                 <div>
                     <input id="name" type="text" name="name" placeholder="Your name.." required>
                 </div>
@@ -102,19 +102,35 @@
                 <button type="submit" id="savemsg">Send</button>
                 <button type="reset">Reset</button>
             </form>
-
-            <div class="fb-page" data-href="https://www.facebook.com/SASTRARacingOfficial/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/SASTRARacingOfficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SASTRARacingOfficial/">SASTRA Racing Team</a></blockquote></div>
+            
+            
+            
         </div>
     </div>
 
 
     <div class="foot">
         
-        <div class="general">
-            <pre style="padding: 10px;">{{items.address}}</pre>
-        </div>
+        
         <div class="general">
             <pre style="padding: 10px;">{{items.contacts}}</pre>
+        </div>
+        <div class="socicons">
+            <div class="phone">
+                <a href="tel:9443450532" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-phone" aria-hidden="true"></i></a>
+            </div>
+            <div class="fb">
+                <a href="https://www.facebook.com/SASTRARacingOfficial/" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            </div>
+            <div class="insta">
+                <a href="https://www.instagram.com/sastra_racing_team_baja/" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+            <div class="mail">
+                <a href="mailto:sastraracingteambaja@gmail.com" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                <a id="mail" href="mailto:sastraracingteambaja@gmail.com" style="text-decoration: none; color:burlywood;font-size: 20px; padding: 10px;">sastraracingteambaja@gmail.com</a>
+            </div>
+            
+            
         </div>
         
     </div>
