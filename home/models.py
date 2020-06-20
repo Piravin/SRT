@@ -39,20 +39,4 @@ class Message(models.Model):
     def __str__(self):
         return self.name
 
-class Car(models.Model):
-    year = models.CharField(max_length=5)
-    link = models.CharField(max_length=1000)
 
-    def __str__(self):
-        return self.year
-    
-class TeamMember(models.Model):
-    name = models.CharField(max_length=100)
-    photo = models.ImageField(default="default.png",upload_to="Team_profile_pics")
-    role = models.CharField(max_length=100,default="member",blank=True)
-    subsystem = models.CharField(max_length=100)
-    linked_in = models.CharField(max_length=1000,default="#")
-    description = models.TextField()
-
-    def __str__(self):
-        return self.name

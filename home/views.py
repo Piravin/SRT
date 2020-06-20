@@ -4,7 +4,7 @@ from .models import *
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import *
-from .models import Message
+from team.models import *
 
 def homePage(request):
     content={
@@ -40,8 +40,9 @@ def carsPage(request):
     return render(request,'home/cars.html',content)
 
 def teamPage(request):
+    layr=Team.objects.last()
     content={
-        'members':TeamMember.objects.all(),
+        'members':TeamMember.objects.filter(team=layr),
         'items':Item.objects.only('logo').first()
     }
     return render(request,'home/team.html',content)
