@@ -46,16 +46,14 @@ html{
 
 .logo{
     margin-left: 10%;
-    background-color: rgb(29, 29, 29);
-    width: 200px;
+    background-color: #000000ec;
+    width: 160px;
     height:100px;
-    transform: skewX(-20deg);
 }
 
 .logopic{
     width:100%;
     height: 100%;
-    padding: 20px;
 }
 .profilepic{
     width:50px;
@@ -265,7 +263,7 @@ img.rounded-corners{
     color: burlywood;
     text-align:left;
     font-size: 25px;
-    font-family: 'Raleway', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -442,6 +440,12 @@ img.rounded-corners{
 .member>hr{
     border-color: violet;
 }
+#morbut{
+    display: none;
+}
+.buts{
+    display: none;
+}
 .member:hover{
     transform: scale(1.01);
     transition: 0.3s;
@@ -557,16 +561,16 @@ img.rounded-corners{
         width:100%;
     }
     .logo{
-        margin-left:auto;
+        margin-left:0;
         margin-right: auto;
         align-self: center;
         transform: none;
         background-color: rgba(0, 0, 0, 0);
-        width:100px;
-        height: 80px;
+        width:160px;
+        height: 90px;
     }
     .logopic{
-        padding:20px;
+        visibility: visible;
     }
     .firstcontent{
         width:100%;
@@ -582,10 +586,13 @@ img.rounded-corners{
     .slide img{
         border-radius: 0;
     }
+    .video-container{
+        background-color: black;
+    }
     .quotecontainer{
         width: 100%;
         clip-path: none;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.438);
     }
     .video iframe{
         width:100%;
@@ -606,10 +613,53 @@ img.rounded-corners{
         border-radius: 0;
     }
     .desc{
-        padding:10px;
+        padding:20px;
+        color:wheat;
+        
+    }
+    .buts{
+        display: block;
+        position: absolute;
+        bottom:100px;
+        width: 100%;
+        padding:30px;
+        
+    }
+    .buts a{
+        width:150px;
+        height: 47px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(255, 187, 0);
+        padding: 10px;
+        background-color: black;
+        border-radius: 1px;
+        border: 0.5px solid rgb(255, 187, 0);
+    }
+    
+    #morbut{
+        display:block;
+        position: absolute;
+        bottom: 50px;
+        align-self: center;
+        width:200px;
+        left:90px;
+        height: 47px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(255, 187, 0);
+        padding: 10px;
+        background-color: black;
+        border-radius: 1px;
+        border: 0.5px solid rgb(255, 187, 0);
     }
     .head{
-        background-color: rgba(0, 0, 0, 0);
+        height:90px;
+        background-color: rgb(0, 0, 0);
     }
     img.rounded-corners{
         border-radius: 0;
@@ -658,9 +708,12 @@ img.rounded-corners{
         width:45px;
         height: 35px;
         float: right;
-        top:-50px;
+        top:-60px;
         right: 30px;
         border-radius: 5px;
+    }
+    #parallex1{
+        background-attachment: scroll;
     }
     .ham1, .ham2, .ham3{
         content:"";
@@ -670,7 +723,7 @@ img.rounded-corners{
         margin-left: 10px;
         width:35px;
         height: 2.5px;
-        background-color: sandybrown;
+        background-color: rgb(243, 186, 0);
     }
     .ham1{
         top:0px;
