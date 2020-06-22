@@ -9,10 +9,17 @@ class Team(models.Model):
 
 class Car(models.Model):
     team = models.ForeignKey(Team,on_delete=models.CASCADE)
-    link = models.CharField(max_length=1000)
-
+    carpic = models.ImageField(default="default.png",upload_to="Cars",blank=True)
     def __str__(self):
         return self.team.year
+
+class CarDetail(models.Model):
+    car = models.ForeignKey(Car,on_delete=models.CASCADE)
+    topic = models.CharField(max_length=100,blank=True)
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.car.team.year
 
 class TeamMember(models.Model):
     team = models.ForeignKey(Team,on_delete=models.CASCADE)

@@ -35,7 +35,7 @@ def showSlide(request):
 
 def carsPage(request):
     content={
-        'cars':Car.objects.all().first(),
+        'cars':Car.objects.all(),
         'items':Item.objects.only('logo').first()}
     return render(request,'home/cars.html',content)
 

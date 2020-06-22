@@ -181,9 +181,6 @@ html{
     font-family: 'Raleway', sans-serif;
 }
 
-img.rounded-corners{
-    border-radius: 10px;
-}
 .slide:hover{
     transition: .3s ease;
     transform: scale(1.01);
@@ -289,11 +286,30 @@ img.rounded-corners{
     bottom:0;
     /* border-right:1px solid sandybrown; */
 }
-
+.car-box{
+    height: 300px;
+    width:300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+}
+.carname{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height: 50px;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(255, 165, 30);
+    border-radius:0 0 20px 20px;
+    background-color: rgba(0, 0, 0, 0.774);
+}
 .sponcer-container{
     display: flex;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.616);
+    background-color: rgb(0, 0, 0);
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -309,7 +325,6 @@ img.rounded-corners{
     transition: 0.3s ease;
 }
 .cont-cont{
-    background: url(img/back3.JPG);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -319,7 +334,7 @@ img.rounded-corners{
     min-height: 700px;
     display: flex;
 
-    background-color: rgba(0, 0, 0, 0.822);
+    background-color: rgba(0, 0, 0, 0.788);
 
     align-items: center;
     justify-content: space-around;
@@ -422,7 +437,6 @@ img.rounded-corners{
     display: flex;
     justify-content: space-around;
     padding: 40px;
-    background-image: url('img/team.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -430,25 +444,67 @@ img.rounded-corners{
 }
 .member{
     padding: 20px;
-    color: rgb(0, 0, 0);
-    max-width: 200px;
-    max-height: 250px;
-    background-color: rgb(240, 202, 121);
+    color: white;
+    position: relative;
+    min-width: 200px;
+    min-height: 250px;
+    background-color: rgb(58, 58, 58);
 
-    border-radius: 2px;
+    border-radius: 5px;
+}
+.member::before{
+    content:"";
+    border-radius: 5px 5px 0 0;
+    top:0;
+    left:0;
+    position:absolute;
+    width:100%;
+    height:50%;
+    background-color:rgba(243, 218, 150, 0.712);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 100ms ease-in;
+}
+.member:hover::before{
+    transform:scaleY(1);
+}
+#memlink{
+    z-index:1;
+    display: none;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+}
+.member:hover #memlink{
+    display:block;
+    transform: 0.3s ease-in;
+}
+.member::after{
+    content:"";
+    border-radius: 0 0 5px 5px;
+    bottom:0;
+    left:0;
+    position:absolute;
+    width:100%;
+    height:50%;
+    background-color: rgba(243, 218, 150, 0.712);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 100ms ease-in;
+}
+.member:hover::after{
+    transform:scaleY(1);
 }
 .member>hr{
-    border-color: violet;
+    border-color: rgb(238, 200, 130);
 }
 #morbut{
     display: none;
 }
 .buts{
     display: none;
-}
-.member:hover{
-    transform: scale(1.01);
-    transition: 0.3s;
 }
 @media only screen and (max-width:1100px){
     #contacts{
@@ -458,9 +514,6 @@ img.rounded-corners{
         width:700px;
 
     }
-    /* .sponsors, .crowdfunding,.contacts{
-        display: none;
-    } */
     .video-container{
         flex-wrap: wrap;
     }
@@ -480,6 +533,12 @@ img.rounded-corners{
     padding-bottom: 20px;
 }
 .fb{
+    align-self: flex-start;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.twitter{
     align-self: flex-start;
     padding-top: 20px;
     padding-right: 20px;
@@ -660,9 +719,6 @@ img.rounded-corners{
     .head{
         height:90px;
         background-color: rgb(0, 0, 0);
-    }
-    img.rounded-corners{
-        border-radius: 0;
     }
     .page{
         padding: 15px;

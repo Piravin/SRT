@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{%static 'home/main.css'%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
-    <title>SRT-Team</title>
+    <title>SRT-Baja | Team</title>
 </head>
 <body>
     <div class="head">
@@ -21,14 +21,8 @@
                 <a href="{%url 'teampage'%}" class="team page activepage">Team</a>
                 <a href="#" class="crowdfunding page">Crowdfunding</a>
                 <a href="#sponsors" class="sponsors page">Sponsors</a>
-                <div class="courses page dropdown"><a class="a" href="#">Courses</a>
-                    <div class="courselist list">
-                        <a href="#" class="course">#</a>
-                        <a href="#" class="course">#</a>
-                        <a href="#" class="course">#</a>
-                    </div>
-                </div> 
-                <a class="contacts page" href="#contacts">Contact</a>
+                <a class="courses page" href="#">Courses</a> 
+                <a class="contacts page" href="{%url 'homepage'%}#contacts">Contact</a>
                 
             </div>
             <div class="logs">
@@ -41,9 +35,10 @@
             </div>
         </div>
     </div>
-    <div class="team-container">
+    <div class="team-container" style="background-image: url({{items.team_background.url}});">
         {%for member in members%}
             <a href="{{member.linked_in}}" style="text-decoration:none;"><div class="member">
+                <i class="fa fa-linkedin-square" style="color:rgb(0, 0, 129);" id="memlink" aria-hidden="true"></i>
                 <img src="{{member.photo.url}}" height="150px" width="150px">
                 <hr>
                 <h3>{{member.name}}</h3>
@@ -54,18 +49,48 @@
     </div>
     <div class="foot">
         
+        
         <div class="general">
-            <p>Address, door no: <br>
-            Road road <br>
-            City</p>
+            <pre style="padding: 10px;">{{items.contacts}}</pre>
         </div>
-        <div class="general">
-            <p>Manager: Name</p>
-            <p>Mobile number</p>
-            <p>manager@email.com</p>
+        <div class="socicons">
+            <div class="phone">
+                <a href="tel:9443450532" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-phone" aria-hidden="true"></i></a>
+            </div>
+            <div class="twitter">
+                <a href="https://twitter.com/SRTBAJA" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+
+            </div>
+            <div class="fb">
+                <a href="https://www.facebook.com/SASTRARacingOfficial/" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            </div>
+            <div class="insta">
+                <a href="https://www.instagram.com/sastra_racing_team_baja/" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+            <div class="mail">
+                <a href="mailto:sastraracingteambaja@gmail.com" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                <a id="mail" href="mailto:sastraracingteambaja@gmail.com" style="text-decoration: none; color:burlywood;font-size: 20px; padding: 10px;">sastraracingteambaja@gmail.com</a>
+            </div> 
         </div>
         
     </div>
-
+    <script>
+        var navbar = document.getElementById("navbar");
+        var navpos = navbar.offsetTop;
+        window.onscroll = ()=>{
+            if(window.pageYOffset > navpos){
+                navbar.classList.add("stickynav");
+                navbar.classList.remove("navbar");
+            }else{
+                navbar.classList.remove("stickynav");
+                navbar.classList.add("navbar");
+            }
+        };
+        var pages = document.getElementsByClassName("page");
+        for(let i=0; i<pages.length; i++){
+            pages[i].style.height = navbar.offsetHeight;
+        }
+    </script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <link rel="shortcut icon" type="image/png" href="{{items.logo.url}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
-    <title>Home Page</title>
+    <title>SASTRA Racing Team - Baja</title>
 </head>
 <body>
     
@@ -74,12 +74,12 @@
         <br><br>
         <div class="sponcer-container" id="sponsors">
             {%for spon in sponsors%}
-                <div class="sponcer"><a href="#"><img src="{{spon.sponsor.url}}" class="rounded-corners" height="200px" width="355px"></a></div>
+                <div class="sponcer"><a href="#"><img src="{{spon.sponsor.url}}" class="rounded-corners" height="150px" width="266px"></a></div>
             {%endfor%}
         </div>
         <br><br><br><br>
     </div>
-    <div class="cont-cont">
+    <div class="cont-cont" style="background-image: url({{items.backgroundimage3.url}});">
         <div id="contacts">
             <div class="map-cont" style="padding:20px;">
                 <iframe class="map" style="border-radius: 5px;" width="400" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=sastra%20university&key=AIzaSyBs8EioAiI9KwsznUcxgDrtEqUCSCC_MPk" allowfullscreen></iframe>
@@ -99,8 +99,7 @@
                 <div>
                     <input id="subject" type="text" name="subject" placeholder="Subject.." >
                 </div>
-                <br>
-                <div>
+                <div style="padding-top: 20px;">
                     <textarea id="msg" name="message" required placeholder="Write a message..." ></textarea>
                 </div>
                 <button type="submit" id="savemsg">Send</button>
@@ -123,18 +122,21 @@
             <div class="phone">
                 <a href="tel:9443450532" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-phone" aria-hidden="true"></i></a>
             </div>
+            <div class="twitter">
+                <a href="https://twitter.com/SRTBAJA" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+
+            </div>
             <div class="fb">
-                <a href="https://www.facebook.com/SASTRARacingOfficial/" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/SASTRARacingOfficial/" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
             </div>
             <div class="insta">
-                <a href="https://www.instagram.com/sastra_racing_team_baja/" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/sastra_racing_team_baja/" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-instagram" aria-hidden="true"></i></a>
             </div>
             <div class="mail">
                 <a href="mailto:sastraracingteambaja@gmail.com" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                 <a id="mail" href="mailto:sastraracingteambaja@gmail.com" style="text-decoration: none; color:burlywood;font-size: 20px; padding: 10px;">sastraracingteambaja@gmail.com</a>
-            </div>
-            
-            
+            </div> 
         </div>
         
     </div>

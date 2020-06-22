@@ -7,10 +7,12 @@ class Item(models.Model):
     quote2 = models.CharField(default="Quotes comming soon..", max_length=100,blank=True)
     backgroundimage1 = models.ImageField(default='back1.jpg',upload_to='back1',blank=True)
     backgroundimage2 = models.ImageField(default='back2.jpg',upload_to='back2',blank=True)
+    backgroundimage3 = models.ImageField(default='default.png',upload_to='back3',blank=True)
     video = models.CharField(max_length=1000,blank=True)
     video_description = models.TextField(blank=True)
     address = models.TextField(blank=True)
     contacts = models.TextField(blank=True)
+    team_background = models.ImageField(default='back2.jpg',upload_to='team',blank=True)
 
 
 class Slide(models.Model):
