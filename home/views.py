@@ -13,7 +13,14 @@ def homePage(request):
         'sponsors':Sponsor.objects.all()
     }
     return render(request, 'home/home.html',content)
-
+def carDetail(request, pk):
+    car=Car.objects.get(id=pk)
+    content={
+        'items':Item.objects.all().first(),
+        'car':CarDetail.objects.get(id=pk),
+        'details':CarDetail.objects.filter(car=car)
+    }
+    return render(request,'home/car.html',content)
 @api_view(['GET'])
 def saveMsg(request):
     msg = Message.objects.all()

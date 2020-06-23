@@ -9,11 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>SRT-Baja | Cars</title>
 </head>
-<body>
-    <div class="head">
+<body style="background-color: rgb(19, 19, 19);">
+    <div class="head" style="background-color: rgb(0, 0, 0);">
         <div class="logo">
             <img src="{{items.logo.url}}" class="logopic">
         </div>
+        <dvi class="ham" id="ham">
+            <div class="ham1" id="ham1"></div>
+            <div class="ham2" id="ham2"></div>
+            <div class="ham3" id="ham3"></div>
+        </dvi>
         <div class="navbar" id="navbar">
             <div class="pages">
                 <a href="{%url 'homepage'%}" class="home page">Home</a>
@@ -35,13 +40,15 @@
             </div>
         </div>
     </div>
-    <div style="display:flex;background-color: rgb(100, 100, 100); justify-content: space-around; padding-top: 30px;display: flex;flex-wrap:wrap;min-height:560px;">
+    {%block car%}
+    <div class="carlistcont">
         {%for car in cars%}
-            <div class="car-box" style="background-image: url({{car.carpic.url}});">
-                <div class="carname">{{car.team.year}}</div>
-            </div>
+            <a href="{% url 'cardetail' car.id%}"><div class="car-box" style="background-image: url({{car.carpic.url}});">
+                <div class="carname"><p>{{car.team.year}}</p></div>
+            </div></a>
         {%endfor%}
     </div>
+    {%endblock car%}
     <div class="foot">
         
         
@@ -70,7 +77,32 @@
         </div>
         
     </div>
+    <script>
+        var ham = document.getElementById("ham");
+        var ham1 = document.getElementById("ham1");
+        var ham2 = document.getElementById("ham2");
+        var ham3 = document.getElementById("ham3");
+        var clicked=1;
+        ham.addEventListener("click",()=>{
+            if(clicked){
+                navbar.style.right="0";
+                ham1.style.transform="rotate(45deg) translate(7px,7px)";
 
+                ham3.style.transform="rotate(-45deg) translate(7px,-7px)";
+
+                ham2.style.display="none";
+                clicked=0;
+            }
+            else{
+                navbar.style.right="-100%";
+                ham1.style.transform="rotate(0)";
+                ham3.style.transform="rotate(0)";
+                ham2.style.display="block";
+                clicked=1;
+            }
+            
+        });
+    </script>
     <script src="{%static 'home/script.js'%}"></script>
 </body>
 </html>

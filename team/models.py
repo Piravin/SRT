@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Team(models.Model):
     year = models.CharField(max_length=20)
@@ -16,10 +17,10 @@ class Car(models.Model):
 class CarDetail(models.Model):
     car = models.ForeignKey(Car,on_delete=models.CASCADE)
     topic = models.CharField(max_length=100,blank=True)
-    description = models.TextField(blank=True)
+    description = RichTextField(blank=True)
 
     def __str__(self):
-        return self.car.team.year
+        return f"{self.car.team.year}-{self.topic}"
 
 class TeamMember(models.Model):
     team = models.ForeignKey(Team,on_delete=models.CASCADE)
