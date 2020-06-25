@@ -14,11 +14,14 @@ def homePage(request):
     }
     return render(request, 'home/home.html',content)
 def carDetail(request, pk):
-    car=Car.objects.get(id=pk)
+    team=Team.objects.get(year=pk)
+    car=Car.objects.get(team=team)
+    members=TeamMember.objects.filter(team=team)
     content={
         'items':Item.objects.all().first(),
-        'car':CarDetail.objects.get(id=pk),
-        'details':CarDetail.objects.filter(car=car)
+        'car':Car.objects.get(team=team),
+        'details':CarDetail.objects.filter(car=car),
+        'members':members
     }
     return render(request,'home/car.html',content)
 @api_view(['GET'])

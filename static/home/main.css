@@ -9,11 +9,39 @@ html{
     background: rgb(29, 29, 29);
     scroll-behavior: smooth;
 }
+.loader{
+    position: fixed;
+    left:0;
+    right: 0;
+    /* padding-top: 100%; */
+    bottom: 0;
+    z-index: 200;
+    width: 100%;
+    height: 800px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: loader;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes loader{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 .head{
     position: relative;
     background: #000000ec;
     width: 100%;
     height: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #navbar{
     background:#3d3d3d;
@@ -157,7 +185,7 @@ html{
     align-items: center;
 }
 .quotecontainer{
-    background-color: rgba(0, 0, 0, 0.548);
+    background-color: rgba(0, 0, 0, 0.911);
     color: rgb(243, 186, 0);
     width: 700px;
     height: 200px;
@@ -167,13 +195,14 @@ html{
     justify-content: flex-start;
     align-items: right;
     clip-path: polygon(0 0,100% 0,70% 100%,0 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .quotecontainer>h1{
     text-align: left;
     padding: 20px;
 
     font-size: 45px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Domine', sans-serif;
 }
 .quotecontainer>h2{
     padding-left: 20px;
@@ -218,13 +247,16 @@ html{
 }
 
 .video-container{
-    background-color: rgb(41, 41, 41);
-    display: flex;
-    align-items: center;
-    justify-content: baseline;
-    border-top: 2px solid sandybrown;
+    background-color: rgb(36, 36, 36);
+    display: grid;
+    grid-template-columns: 35% 65%;
+    /* align-items: center; */
+    justify-content: center;
+    /* border-top: 2px solid rgb(255, 223, 195); */
     flex-wrap: nowrap;
-    flex-direction: column;
+    height: 750px;
+    
+    /* flex-direction: column; */
 }
 .video{
     margin-left: 50px;
@@ -239,34 +271,68 @@ html{
     border-radius: 20px;
     margin-top: 10px;
 }
-.videodescription{
+.videodiscription{
 
     text-align: center;
-
-    margin-top: 0px;
+    margin:50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* background-color: rgb(53, 53, 53); */
 
     
 }
-.videodiscription h2{
-    text-align: center;
-    color: burlywood;
-    padding: 20px;
-    font-family: Lucida Console;
-    font-size: 30px;
+.videodiscription h1{
+    text-align: left;
+    color: rgb(224, 176, 137);
+    margin:20px;
+    font-family: 'Domine';
+    font-size: 40px;
+    padding-bottom:10px;
+    width:180px;
+    border-bottom: 1px solid rgb(253, 222, 181);
 }
 .desc{
-    padding:20px;
+    margin:20px;
+    flex:1;
     align-self: center;
-    color: burlywood;
+    color: rgb(253, 231, 209);
+    
     text-align:left;
     font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'metropolis-light', sans-serif;
 
+}
+a{
+    text-decoration: none;
+}
+.supbut{
+    
+    width:190px;
+    height: 50px;
+    float: right;
+    margin:20px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 25px;
+    text-align: center;
+    align-items: center;
+    padding:5px;
+    font-weight: 800;
+    border-radius: 5px;
+    background-color: rgb(224, 176, 137);
+    color:rgb(36, 36, 36);
+    transition:0.3s ease;
+}
+.supbut:hover{
+    background-color: rgb(58, 58, 58);
+    color:rgb(224, 176, 137);
+    transition:0.3s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .belowcontainer{
     width: 100%;
     min-height:700px;
+    padding: 5%;
+    background-color: rgb(196, 196, 196);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -277,13 +343,16 @@ html{
     display: flex;
     height:320px;
     width:600px;
-    background: rgb(41, 41, 41);
+    /* background: rgb(53, 53, 53); */
     position: relative;
-    float: right;
-    bottom:18%;
+    /* float: right; */
+    margin:50px;
+    
+    /* bottom:18%; */
     align-items: center;
-    right: 0;
-    bottom:0;
+    /* right: 0;
+    bottom:0; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     /* border-right:1px solid sandybrown; */
 }
 .car-box{
@@ -295,6 +364,7 @@ html{
     position: relative;
     border-radius: 2px;
     margin:20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .carname{
     position: absolute;
@@ -333,15 +403,32 @@ html{
     top:40%;
     left:40%;   
 }
+.spons{
+    background-color: rgb(20, 20, 20);
+    width:300px;
+    /* margin-top: 5%; */
+    height:70px;
+    color: rgb(233, 233, 233);
+    font-family: 'Robot Mono';
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .sponcer-container{
     display: flex;
     width: 100%;
-    background-color: rgb(0, 0, 0);
+    padding:20px;
+    background-color: rgb(20, 20, 20);
     align-items: center;
     flex-wrap: wrap;
+    border-radius: 0 5px 5px 5px;
     justify-content: space-around;
-    position: absolute;
-    bottom: 0;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* position: absolute;
+    bottom: 0; */
 }
 .sponcer{
     padding: 10px;
@@ -350,6 +437,46 @@ html{
 .sponcer:hover{
     transform: scale(1.02);
     transition: 0.3s ease;
+}
+.spon-wrapper{
+    width: 100%;
+    background-color: rgb(20, 20, 20);
+    position:relative;
+    min-height:100px;
+    align-items: center;
+    padding-bottom: 20px;
+    border-radius: 0 5px 5px 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.belobut{
+    height:80px;
+    width:100%;
+}
+.join{
+    width:220px;
+    height:50px;
+    margin-top: 20px;
+    /* margin:2%; */
+    margin-right: 5%;
+    float:right;
+    border-radius: 10px;
+    /* position: relative; */
+    align-self: right;
+    text-align: center;
+    align-items: center;
+    font-family: 'Robot Mono', sans-serif;
+    font-weight: 700;
+    color: black;
+    padding:10px;
+    font-size: 25px;
+    background-color: rgb(207, 207, 207);
+    transition: 200ms ease;
+}
+.join:hover{
+    background-color: rgb(53, 53, 53);
+    color: rgb(190, 190, 190);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 200ms ease;
 }
 .cont-cont{
     background-repeat: no-repeat;
@@ -361,7 +488,7 @@ html{
     min-height: 700px;
     display: flex;
 
-    background-color: rgba(0, 0, 0, 0.788);
+    background-color: rgb(31, 28, 25);
 
     align-items: center;
     justify-content: space-around;
@@ -384,6 +511,7 @@ html{
     background-color: rgb(34, 34, 34);
     color: burlywood;
     padding:20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 #contacts>form>div>input{
@@ -391,7 +519,9 @@ html{
     outline:none;
     border: none;
     background-color: rgb(34, 34, 34);
-    color: burlywood;
+    color: rgb(216, 201, 181);
+    font-size: 15px;
+    font-weight: 500;
     
 }
 #contacts>form>div{
@@ -400,11 +530,13 @@ html{
 #contacts>form>div>textarea{
     resize: none;
     width:100%;
+    font-size: 15px;
+    font-weight: 500;
     min-height: 100px;
     outline:none;
     border:none;
     background:none;
-    color: burlywood;
+    color: rgb(216, 201, 181);
 }
 
 /* #contacts>form>div>input,textarea:focus{
@@ -430,6 +562,9 @@ html{
 #contacts>form>button:focus{
     border:0px;
     
+}
+.map{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .create-new{
     height:270px;
@@ -460,7 +595,7 @@ html{
 
 } */
 .team-container{
-    height:700px;
+    min-height:700px;
     display: flex;
     justify-content: space-around;
     padding: 40px;
@@ -470,14 +605,27 @@ html{
     flex-wrap: wrap;
 }
 .member{
-    padding: 20px;
-    color: white;
+    color: rgb(214, 152, 114);
     position: relative;
-    min-width: 200px;
+    width: 200px;
     min-height: 250px;
-    background-color: rgb(58, 58, 58);
-
+    background-color: rgb(20, 20, 20);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
+    margin:10px;
+    word-wrap: break-word;
+}
+.member img{
+   width:200px;
+   border-radius:5px 5px 0 0;
+}
+.member h3,p{
+    padding-left:10px;
+}
+.member h3{
+    padding-top: 10px;
+    font-size: 15px;
+    color:rgb(236, 141, 82);
 }
 .member::before{
     content:"";
@@ -487,7 +635,7 @@ html{
     position:absolute;
     width:100%;
     height:50%;
-    background-color:rgba(243, 218, 150, 0.712);
+    background-color:rgba(94, 67, 50, 0.89);
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 100ms ease-in;
@@ -516,7 +664,7 @@ html{
     position:absolute;
     width:100%;
     height:50%;
-    background-color: rgba(243, 218, 150, 0.712);
+    background-color: rgba(53, 53, 53, 0.89);
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 100ms ease-in;
@@ -586,17 +734,21 @@ html{
 }
 .car1{
     background-size: cover;
-    height: 0;
     background-attachment: fixed;
     width:100%;
-    padding-top: 56.25%;
+    /* padding-top: 56.25%; */
+}
+@media (min-width:700px){
+    .car1{
+        height: 550px;
+    }
 }
 .car2{
     background-size: cover;
     background-attachment: fixed;
 }
 .cardesc{
-    clip-path: polygon(50% 10%, 55% 0, 100% 0, 100% 100%, 0 100%, 0 0, 45% 0);
+    clip-path: polygon(50% 30px, 55% 0, 100% 0, 100% 100%, 0 100%, 0 0, 45% 0);
     display: grid;
     border-top: 1.5px solid burlywood;
     padding:40px;
@@ -614,14 +766,28 @@ html{
     padding-right: 20x;
     padding-bottom: 20px;
 }
+.carteam{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.carteam li{
+    color:wheat;
+    font-size: 20px;
+}
 @media (max-width:700px){
     .car1{
         background-attachment: scroll;
-        /* background-size: contain;
+        background-size: contain;
         background-repeat: no-repeat;
-        background-position: 0 90px; */
+        height:0;
+        padding-top:56.25%;
+        /* background-position: 0 90px; */
+    }
+    .carprop h1,p{
+        padding-left: 0!important;
     }
     .cardesc{
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
         background-color: black;
         display: flex;
         flex-direction: column;
@@ -650,6 +816,9 @@ html{
     } */
     html,body{
         overflow-x: hidden;
+    }
+    .member{
+        margin: 2px;
     }
     #navbar{
         position:absolute;
@@ -718,9 +887,12 @@ html{
         visibility: visible;
     }
     .firstcontent{
-        width:100%;
+        width:90%;
+        margin:5%;
         height: auto;
-        margin-top: 20px;
+        /* margin-top: 20px; */
+        order:2;
+
     }
     .slide{
         padding:0;
@@ -732,7 +904,9 @@ html{
         border-radius: 0;
     }
     .video-container{
-        background-color: black;
+        display: flex;
+        height:auto;
+        flex-direction: column;
     }
     .quotecontainer{
         width: 100%;
@@ -878,5 +1052,14 @@ html{
     .ham3{
         top:20px;
         left: -5px;
+    }
+    .team-container{
+        background-image: none!important;
+        background-color: rgb(32, 32, 32);
+        padding:10px;
+        width: 100%;
+    }
+    .teambody{
+        background-color: rgb(32, 32, 32);
     }
 }

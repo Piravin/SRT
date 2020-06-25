@@ -1,16 +1,27 @@
 {%extends 'home/cars.html'%}
 {%load static%}
 {%block car%}
-    <div class="car1" style="background-image: url({{car.car.carpic.url}});">
+    <div class="car1" style="background-image: url({{car.carpic.url}});">
 
     </div>
-    <div class="car2" style="background-image: url({{car.car.carpic.url}});">
+    <div class="car2" style="background-image: url({{car.carpic.url}});">
         <div class="cardesc">
-            {%for detail in details%}
-            <div class="carprop">
-                <h1>{{detail.topic}}</h1>
-                <p>{{detail.description | safe}}</p>
+            <div>
+                <h1 style="color:rgb(245, 181, 61);">The Team:</h1>
+                <ul class="carteam" style="margin-left: 40px">
+                    {%for member in members%}
+                        <li style="color:burlywood;">{{member.name}}</li>
+                    {%endfor%}
+                </ul>
             </div>
+            
+            
+
+            {%for detail in details%}
+                <div class="carprop">
+                    <h1>{{detail.topic}}</h1>
+                    <p>{{detail.description | safe}}</p>
+                </div>
             {%endfor%}
         </div>
     </div>

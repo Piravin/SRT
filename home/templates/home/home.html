@@ -7,11 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'home/main.css'%}">
     <link rel="shortcut icon" type="image/png" href="{{items.logo.url}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>SASTRA Racing Team - Baja</title>
 </head>
 <body>
+    <div class="loader" >
+        <img src="{{items.logo.url}}" class="loaderlogo" height="270px" width="480px">
+    </div>
     
     <div id="parallex1" style="background-image: url('{{items.backgroundimage1.url}}');">
         <div class="head">
@@ -57,8 +62,10 @@
     
     <div class="video-container" id="more">
         <div class="videodiscription">
+            <h1>About us</h1>
             <p class="desc">{{items.video_description}}
             </p>
+            <a href="#contacts"><div class="supbut">Support Us</div></a>
         </div>
         <div class="firstcontent">
             <div class="slide fade">
@@ -70,16 +77,23 @@
         <!-- <div class="video"><iframe width="800" height="450" src="{{items.video}}" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
 
     </div>
-    <div class="belowcontainer" style="background-image: url('{{items.backgroundimage2.url}}');">
-        <br><br>
-        <div class="sponcer-container" id="sponsors">
-            {%for spon in sponsors%}
-                <div class="sponcer"><a href="#"><img src="{{spon.sponsor.url}}" class="rounded-corners" height="150px" width="266px"></a></div>
-            {%endfor%}
+    <div class="belowcontainer">
+        <div class="spons">Our Sponsors</div>
+        <div class="spon-wrapper">
+            <div class="sponcer-container" id="sponsors">
+                {%for spon in sponsors%}
+                    <div class="sponcer"><a href="#"><img src="{{spon.sponsor.url}}" class="rounded-corners" height="150px" width="266px"></a></div>
+                {%endfor%}
+            </div>
+            <div class="belobut">
+                <a href="#contacts"><div class="join">Join The Family</div></a>
+            </div>
+            
         </div>
-        <br><br><br><br>
+           
+        
     </div>
-    <div class="cont-cont" style="background-image: url({{items.backgroundimage3.url}});">
+    <div class="cont-cont">
         <div id="contacts">
             <div class="map-cont" style="padding:20px;">
                 <iframe class="map" style="border-radius: 5px;" width="400" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=sastra%20university&key=AIzaSyBs8EioAiI9KwsznUcxgDrtEqUCSCC_MPk" allowfullscreen></iframe>
