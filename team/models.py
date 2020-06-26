@@ -10,6 +10,7 @@ class Team(models.Model):
 
 class Car(models.Model):
     team = models.ForeignKey(Team,on_delete=models.CASCADE)
+    name = models.CharField(default='#',max_length=100)
     carpic = models.ImageField(default="default.png",upload_to="Cars",blank=True)
     def __str__(self):
         return self.team.year
