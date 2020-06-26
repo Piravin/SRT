@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'home/main.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>SRT-Baja | Team</title>
@@ -40,17 +41,27 @@
             </div>
         </div>
     </div>
-    <div class="team-container">
-        {%for member in members%}
-            <a href="{{member.linked_in}}" style="text-decoration:none;"><div class="member">
-                <i class="fa fa-linkedin-square" style="color:rgb(43, 150, 250);" id="memlink" aria-hidden="true"></i>
-                <img src="{{member.photo.url}}" height="150px" width="150px">
-                <hr>
-                <h3>{{member.name}}</h3>
-                <p>{{member.role}}</p>
-                <p>{{member.subsystem}}</p>
-            </div></a>
-        {%endfor%}
+    <div class="tmpg">
+        <div class="tmpto"><img src="{{team.photo.url}}" width="100%" height="auto"></div>
+        <div class="team-container">
+            {%for system in systems%}
+                <h1 class="system">{{system.name}}</h1>
+                <div class="subteam">
+                    {%for member in members%}
+                        {%if member.subsystem == system%}
+                            <a href="{{member.linked_in}}" style="text-decoration:none;"><div class="member">
+                            <i class="fa fa-linkedin-square" style="color:rgb(43, 150, 250);" id="memlink" aria-hidden="true"></i>
+                            <img src="{{member.photo.url}}" height="150px" width="150px">
+                            <hr>
+                            <h3>{{member.name}}</h3>
+                            <p>{{member.role}}</p>
+                            <p>{{member.subsystem}}</p>
+                            </div></a>
+                        {%endif%}
+                    {%endfor%}
+                </div>
+            {%endfor%}
+        </div>
     </div>
     <div class="foot">
         
@@ -60,26 +71,28 @@
         </div>
         <div class="socicons">
             <div class="phone">
-                <a href="tel:9443450532" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                <a href="tel:{{contacts.phone_no}}" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-phone" aria-hidden="true"></i></a>
             </div>
             <div class="twitter">
-                <a href="https://twitter.com/SRTBAJA" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-twitter" aria-hidden="true"></i>
+                <a href="{{contacts.twitter}}" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
 
             </div>
             <div class="fb">
-                <a href="https://www.facebook.com/SASTRARacingOfficial/" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <a href="{{contacts.facebook}}" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
             </div>
             <div class="insta">
-                <a href="https://www.instagram.com/sastra_racing_team_baja/" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="{{contacts.instagram}}" target="_blank" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-instagram" aria-hidden="true"></i></a>
             </div>
             <div class="mail">
-                <a href="mailto:sastraracingteambaja@gmail.com" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                <a id="mail" href="mailto:sastraracingteambaja@gmail.com" style="text-decoration: none; color:burlywood;font-size: 20px; padding: 10px;">sastraracingteambaja@gmail.com</a>
+                <a href="mailto:{{contacts.email}}" style="text-decoration: none; color:burlywood;font-size: 40px;"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                <a id="mail" href="mailto:{{contacts.email}}" style="text-decoration: none; color:burlywood;font-size: 20px; padding: 10px;">sastraracingteambaja@gmail.com</a>
             </div> 
         </div>
         
     </div>
+    <a href="#top" id="totop"><div class="baktoc tmtop"><i class="fa fa-angle-up upbutcar" aria-hidden="true"></i>
+    </div></a>
     <script>
         var navbar = document.getElementById("navbar");
         var navpos = navbar.offsetTop;
@@ -121,6 +134,16 @@
                 clicked=1;
             }
             
+        });
+    </script>
+    <script>
+        var totop = document.getElementById("totop");
+        window.addEventListener("scroll",()=>{
+            if(window.pageYOffset>200){
+                totop.style.display = "block";
+            }else{
+                totop.style.display = "none";
+            }
         });
     </script>
 </body>

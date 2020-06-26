@@ -41,4 +41,11 @@ class Message(models.Model):
     def __str__(self):
         return self.name
 
+class Contact(models.Model):
+    phone_no = models.CharField(max_length=12)
+    twitter = models.CharField(max_length=1000)
+    facebook = models.CharField(max_length=1000)
+    instagram = models.CharField(max_length=1000)
+    email = models.EmailField()
+
 

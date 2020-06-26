@@ -10,7 +10,8 @@ def homePage(request):
     content={
         'items':Item.objects.all().first(),
         'slides':Slide.objects.all(),
-        'sponsors':Sponsor.objects.all()
+        'sponsors':Sponsor.objects.all(),
+        'contacts':Contact.objects.all().first()
     }
     return render(request, 'home/home.html',content)
 def carDetail(request, pk):
@@ -46,6 +47,7 @@ def showSlide(request):
 def carsPage(request):
     content={
         'cars':Car.objects.all(),
+        'contacts':Contact.objects.all().first(),
         'items':Item.objects.only('logo').first()}
     return render(request,'home/cars.html',content)
 
@@ -53,6 +55,9 @@ def teamPage(request):
     layr=Team.objects.last()
     content={
         'members':TeamMember.objects.filter(team=layr),
+        'contacts':Contact.objects.all().first(),
+        'systems':Subsystem.objects.all(),
+        'team':Team.objects.all().last(),
         'items':Item.objects.only('logo').first()
     }
     return render(request,'home/team.html',content)
