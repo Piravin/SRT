@@ -14,11 +14,13 @@ class UserRegisterForm(UserCreationForm):
         fields=['username','email','reg_no','year','dep','password1','password2']
 
 class UserUpdateForm(forms.ModelForm):
-	email = forms.EmailField()
-
-	class Meta:
-		model = User
-		fields = ['username', 'email']
+    email = forms.EmailField()
+    reg_no = forms.IntegerField(label="SASTRA Register no:")
+    year = forms.IntegerField(label="Year of study")
+    dep = forms.CharField(label="Degree & Program")
+    class Meta:
+        model = User
+        fields=['username','email','reg_no','year','dep']
 
 class ProfileUpdateForm(forms.ModelForm):
 	class Meta:

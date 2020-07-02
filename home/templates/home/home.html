@@ -67,6 +67,7 @@
             </p>
             <a href="#contacts"><div class="supbut">Support Us</div></a>
         </div>
+        <div class="video"><iframe width="800" height="450" src="{{items.video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="firstcontent">
             <div class="slide fade">
                 <a href="#" id="slilink"><img id="slide" src="" class="rounded-corners" height="270px" width="480px"></a>
@@ -74,7 +75,7 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        <!-- <div class="video"><iframe width="800" height="450" src="{{items.video}}" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
+        
 
     </div>
     <div class="belowcontainer">
@@ -154,8 +155,19 @@
         </div>
         
     </div>
+    <a href="#top" id="totop"><div class="baktoc"><i class="fa fa-angle-up upbutcar" aria-hidden="true"></i>
     <script src="{% static 'home/jquery.js'%}"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0" nonce="2e8qM6JO"></script>
     <script src="{%static 'home/script.js'%}"></script>
+    <script>
+        var totop = document.getElementById("totop");
+        window.addEventListener("scroll",()=>{
+            if(window.pageYOffset>200){
+                totop.style.display = "block";
+            }else{
+                totop.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>

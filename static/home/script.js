@@ -71,7 +71,7 @@ for(let i=0; i<pages.length; i++){
 }
 
 function initAll(){
-    
+    var device = window.matchMedia("(min-width:900px)");
     var slide = document.getElementById("slide");
     var slilink = document.getElementById("slilink");
 }
@@ -114,9 +114,11 @@ function slideShow(n){
 setInterval(()=>{plusSlides(1);},5000);
 const parallax = document.getElementById("parallex1");
 window.addEventListener("scroll",function(){
-    
-    var offset = window.pageYOffset;
-    parallax.style.backgroundPositionY = offset*0.6 + "px";
+    if(device.matches){
+        var offset = window.pageYOffset;
+        parallax.style.backgroundPositionY = offset*0.6 + "px";
+    }
+   
 })
 
 
